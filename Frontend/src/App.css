@@ -1,0 +1,426 @@
+/* Estilos generales - Mayor especificidad para sobrescribir Bootstrap */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  background: linear-gradient(135deg, #260bdc 0%, #0ac3d8 100%) !important;
+  min-height: 100vh !important;
+  color: #333 !important;
+}
+
+/* Forzar colores de texto para mejor contraste */
+.container h1,
+.container h2, 
+.container h3,
+.container h4,
+.container h5,
+.container h6 {
+  color: #2c3e50 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.container p,
+.container div,
+.container span,
+.container td {
+  color: #333 !important;
+}
+
+/* Texto en áreas claras */
+.table tbody td,
+.card-body,
+.form-control,
+.alert {
+  color: #333 !important;
+}
+
+/* Contenedor principal - Forzar estilos sobre Bootstrap */
+.container, 
+.container-fluid {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  padding: 2rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  color: #333 !important;
+}
+
+/* Navbar personalizada */
+.navbar {
+  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #4fc3f7 !important;
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #e8e8e8 !important;
+  font-weight: 500;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #4fc3f7 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: #4fc3f7;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Títulos - Forzar visibilidad */
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50 !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 600 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+h1 {
+  font-size: 2.5rem !important;
+  text-align: center !important;
+  background: linear-gradient(45deg, #2c3e50, #34495e) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 700 !important;
+}
+
+/* Botones */
+.btn {
+  border-radius: 25px;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #4fc3f7, #29b6f6);
+  box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #29b6f6, #0288d1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(79, 195, 247, 0.6);
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #66bb6a, #4caf50);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-success:hover {
+  background: linear-gradient(45deg, #4caf50, #388e3c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, #ffb74d, #ff9800);
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.btn-warning:hover {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 152, 0, 0.6);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #ef5350, #f44336);
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(244, 67, 54, 0.6);
+}
+
+/* Tablas - Mejorar contraste */
+.table {
+  background: white !important;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  margin-top: 2rem !important;
+}
+
+.table thead th {
+  background: linear-gradient(45deg, #2c3e50, #34495e) !important;
+  color: white !important;
+  border: none !important;
+  padding: 1rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.table tbody td {
+  padding: 1rem !important;
+  vertical-align: middle !important;
+  border-bottom: 1px solid #e9ecef !important;
+  transition: background-color 0.3s ease !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa !important;
+  transform: scale(1.01) !important;
+  transition: all 0.3s ease !important;
+}
+
+.table tbody tr:hover td {
+  color: #2c3e50 !important;
+}
+
+/* Formularios */
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 0.2rem rgba(79, 195, 247, 0.25);
+  transform: translateY(-2px);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Cards y contenedores */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 15px 15px 0 0 !important;
+  padding: 1.5rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* Alertas y mensajes */
+.alert {
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.alert-info {
+  background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+  color: #0277bd;
+}
+
+.alert-success {
+  background: linear-gradient(45deg, #e8f5e8, #c8e6c9);
+  color: #2e7d32;
+}
+
+.alert-warning {
+  background: linear-gradient(45deg, #fff3e0, #ffcc02);
+  color: #ef6c00;
+}
+
+.alert-danger {
+  background: linear-gradient(45deg, #ffebee, #ffcdd2);
+  color: #c62828;
+}
+
+/* Estados vacíos - Mejorar contraste */
+.empty-state {
+  text-align: center !important;
+  padding: 3rem !important;
+  color: #495057 !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  background: #f8f9fa !important;
+  border-radius: 10px !important;
+  margin: 2rem 0 !important;
+  border: 2px dashed #dee2e6 !important;
+}
+
+/* Mensaje cuando no hay datos */
+.table tbody tr td {
+  text-align: center !important;
+}
+
+.table tbody tr:only-child td {
+  color: #6c757d !important;
+  font-style: italic !important;
+  font-size: 1.1rem !important;
+  padding: 2rem !important;
+}
+
+/* Forzar texto visible en todos los contextos */
+* {
+  text-rendering: optimizeLegibility !important;
+}
+
+/* Asegurar que todos los textos sean legibles */
+.container * {
+  color: inherit !important;
+}
+
+.container .text-muted {
+  color: #6c757d !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+/* Efectos adicionales */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Transiciones suaves para todos los elementos */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #764ba2, #667eea);
+}
